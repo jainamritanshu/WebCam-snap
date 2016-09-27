@@ -1,9 +1,10 @@
 {% block body %}
-<form method="POST" action="./downloading">
+<form method="POST" action="../downloading/">
+	{% csrf_token %}
  	<ul>
     {% for cam in camera %}
-        <li><a href = "127.0.0.1:8000/downloading/">{{ cam.university_name }}</a></li>
-        <input type="hidden" name="id" value={{cam.id}} />
+        <li><button type = "submit" name = "id" value = {{cam.id}}>{{ cam.university_name }}</button></li>
+<!--         <input type="hidden" name="id" value="1" /> -->
     {% endfor %}
     </ul>
 </form>    

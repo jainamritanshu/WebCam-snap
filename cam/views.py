@@ -14,13 +14,14 @@ def list_cam(request):
 @csrf_exempt
 def cam_click(request):
 
-	c_id = request.POST['id']
+	c_id = request.POST.get('id')
+	print c_id
 	cam = Camera.objects.get(pk = c_id)
 	driver = webdriver.Firefox()
 	x=0
 	while x<10:
 		driver.get(cam.link)
-		driver.save_screenshot(str(cam.name) + str(time.time()))
+		driver.save_screenshot(str(cam.university_name) + str(time.time()))
 		time.sleep(10)
 		x+=1
 
