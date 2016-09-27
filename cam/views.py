@@ -30,4 +30,3 @@ def cam_click(request):
 	context = {'cam': cam}
 	return render(request, 'cam/downloading.html', context)
 
-	# urllib.urlretrieve("http://portalweb.bucknell.edu/stuaptcam/readImage.asp", img_file_name1)
