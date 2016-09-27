@@ -1,0 +1,10 @@
+{% block body %}
+<form method="POST" action="./downloading">
+ 	<ul>
+    {% for cam in camera %}
+        <li><a href = "127.0.0.1:8000/downloading/">{{ cam.university_name }}</a></li>
+        <input type="hidden" name="id" value={{cam.id}} />
+    {% endfor %}
+    </ul>
+</form>    
+{% endblock body %}    
