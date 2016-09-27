@@ -17,6 +17,7 @@ def cam_click(request):
 	c_id = request.POST.get('id')
 	print c_id
 	cam = Camera.objects.get(pk = c_id)
+##############Selenium implementation to download images##################
 	driver = webdriver.Firefox()
 	x=0
 	while x<10:
@@ -26,7 +27,7 @@ def cam_click(request):
 		x+=1
 
 	driver.quit()
-
+################End Selenium###############################################
 	context = {'cam': cam}
 	return render(request, 'cam/downloading.html', context)
 
